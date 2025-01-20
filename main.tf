@@ -5,14 +5,6 @@ terraform {
       version = "4.52.0"
     }
    }
-   cloud { 
-    
-    organization = "test12121121212121" 
-
-    workspaces { 
-      name = "krnetwork" 
-    } 
-  } 
   required_version = ">= 1.1.0"
 }
 
