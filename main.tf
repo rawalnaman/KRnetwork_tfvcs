@@ -11,7 +11,7 @@ terraform {
 provider "aws" {
   region = "us-east-1"
 }
-/*
+
 data "aws_ami" "ubuntu" {
   most_recent = true
 
@@ -64,4 +64,4 @@ output "web-address" {
   value = "${aws_instance.web.public_dns}:8080"
 }
 
-*/
+
