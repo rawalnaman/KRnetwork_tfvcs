@@ -4,7 +4,16 @@ terraform {
       source  = "hashicorp/aws"
       version = "4.52.0"
     }
+    
    }
+   cloud { 
+    
+    organization = "test12121121212121" 
+
+    workspaces { 
+      name = "krnetwork" 
+    } 
+  } 
   required_version = ">= 1.1.0"
 }
 
@@ -30,7 +39,7 @@ data "aws_ami" "ubuntu" {
 
 resource "aws_instance" "web" {
   ami                    = data.aws_ami.ubuntu.id
-  instance_type          = "t2.medium"
+  instance_type          = "t2.micro"
   vpc_security_group_ids = [aws_security_group.web-sg.id]
 
   user_data = <<-EOF
@@ -46,8 +55,8 @@ resource "aws_instance" "web" {
 resource "aws_security_group" "web-sg" {
   name = "web-sg"
   ingress {
-    from_port   = 80
-    to_port     = 80
+    from_port   = 8080
+    to_port     = 8080
     protocol    = "tcp"
     cidr_blocks = ["0.0.0.0/0"]
   }
