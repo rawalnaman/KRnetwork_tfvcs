@@ -4,6 +4,11 @@ terraform {
       source  = "hashicorp/aws"
       version = "4.52.0"
     }
+google = {
+      source = "hashicorp/google"
+      version = "6.18.1"
+    }
+
     
    }
    cloud { 
@@ -19,6 +24,9 @@ terraform {
 
 provider "aws" {
   region = "us-east-1"
+}
+provider "google" {
+  # Configuration options
 }
 
 data "aws_ami" "ubuntu" {
@@ -84,3 +92,7 @@ ingress {
 output "web-address" {
   value = "${aws_instance.web.public_dns}:8080"
 }
+
+## GCP provisioning
+
+
