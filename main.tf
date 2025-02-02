@@ -8,10 +8,10 @@ terraform {
    }
    cloud { 
     
-    organization = "test12121121212121" 
+    organization = "namantf" 
 
     workspaces { 
-      name = "krnetwork" 
+      name = "fourthworkspace" 
     } 
   } 
   required_version = ">= 1.1.0"
@@ -40,7 +40,7 @@ data "aws_ami" "ubuntu" {
 resource "aws_instance" "web" {
   ami                    = data.aws_ami.ubuntu.id
   instance_type          = "t2.micro"
-  vpc_security_group_ids = [aws_security_group.web-sg.id]
+  vpc_security_group_ids = [aws_security_group.web-sg1.id]
 
   user_data = <<-EOF
               #!/bin/bash
@@ -52,8 +52,8 @@ resource "aws_instance" "web" {
               EOF
 }
 
-resource "aws_security_group" "web-sg" {
-  name = "web-sg"
+resource "aws_security_group" "web-sg1" {
+  name = "web-sg1"
   ingress {
     from_port   = 8080
     to_port     = 8080
