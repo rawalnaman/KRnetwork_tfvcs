@@ -96,7 +96,7 @@ output "web-address" {
 ## GCP provisioning
 
 resource "google_service_account" "default" {
-  account_id   = "namantestserver"
+  account_id   = "dazzling-trail-448916-f6"
   display_name = "Custom SA for VM Instance"
 }
 
