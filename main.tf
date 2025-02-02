@@ -94,12 +94,12 @@ output "web-address" {
 }
 
 ## GCP provisioning
-
+/*
 resource "google_service_account" "default" {
   account_id   = "dazzling-trail-448916-f6"
   display_name = "Custom SA for VM Instance"
 }
-
+*/
 resource "google_compute_instance" "default" {
   name         = "my-instance"
   machine_type = "n2-standard-2"
