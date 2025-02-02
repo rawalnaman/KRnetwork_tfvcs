@@ -100,6 +100,8 @@ resource "google_service_account" "default" {
   display_name = "Custom SA for VM Instance"
 }
 */
+
+/*
 resource "google_compute_instance" "default" {
   name         = "my-instance"
   machine_type = "n2-standard-2"
@@ -132,7 +134,7 @@ resource "google_compute_instance" "default" {
   metadata = {
     foo = "bar"
   }
-
+*/
   metadata_startup_script = "echo hi > /test.txt"
 /*
   service_account {
