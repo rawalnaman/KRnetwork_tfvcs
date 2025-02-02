@@ -11,7 +11,7 @@ terraform {
     organization = "namantf" 
 
     workspaces { 
-      name = "fourthworkspace" 
+      name = "KRnetwork_tfvcs" 
     } 
   } 
   required_version = ">= 1.1.0"
