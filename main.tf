@@ -26,7 +26,7 @@ provider "aws" {
   region = "us-east-1"
 }
 provider "google" {
-  # Configuration options
+  project = "dazzling-trail-448916-f6"
 }
 
 data "aws_ami" "ubuntu" {
